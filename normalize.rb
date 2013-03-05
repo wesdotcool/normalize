@@ -42,7 +42,7 @@ end
 # This runs everything in the file. It should be the only thing you
 # need to call if you're running this from an irb process
 def normalization_program
-  puts normalize(get_input_from_user)
+  puts normalize(prompt_and_get_input_from_user)
 end
 
 normalization_program

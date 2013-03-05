@@ -9,10 +9,8 @@ corresponding normalized path
 
 You could also run this code in your terminal:
 ```bash
-git clone git://github.com/wesdotcool/normalize.git
-cd normalize
-chmod u+x normalize.rb
-./normalize.rb
+git clone git://github.com/wesdotcool/normalize.git &&
+ruby normalize/normalize.rb
 ```
 
 This code will treat multiple slashes 'foo//bar' as directories. As
