@@ -3,7 +3,7 @@
 # This takes a string and splits it by the '/' and removes all
 # occurances of a single '.'n
 def remove_dots(input)
-  input.split('/').select { |dir| dir != '.' }
+  input.strip.split('/').select { |dir| dir != '.' }
 end
 
 # This will normalize the input string.
@@ -27,6 +27,22 @@ def normalize(input)
   (final+no_dots).join('/')
 end
 
-input = $stdin.readline
+# This prints a simple prompt for the user
+def prompt_user
+  puts "Please type in a path:"
+end
 
-puts normalize(input)
+# This prompts the user and returns 1 line of input without trailing
+# newline character
+def prompt_and_get_input_from_user
+  prompt_user
+  input = $stdin.readline.strip
+end
+
+# This runs everything in the file. It should be the only thing you
+# need to call if you're running this from an irb process
+def normalization_program
+  puts normalize(get_input_from_user)
+end
+
+normalization_program
